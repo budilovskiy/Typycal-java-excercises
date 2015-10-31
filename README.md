@@ -1,0 +1,1 @@
+# Typycal-java-excercises
