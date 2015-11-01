@@ -13,8 +13,8 @@ public class Main {
 
     public static int sequenceLength(int[] array, int endElement) {
         int counter = 0;
-        while (array[counter++] != endElement) {
-            continue;
+        while (array[counter] != endElement) {
+            counter++;
         }
         return counter;
     }
