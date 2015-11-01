@@ -10,10 +10,10 @@ public class Main {
     public static void main(String[] args) {
         String[] banks = {"Bank 1", "Bank 2", "Bank 3", "Bank 4", "Bank 5"};
         double[] exchangeRates = {50.0, 50.2, 49.2, 49.9, 50.3};
-        System.out.println(countBadQualityItems(banks, exchangeRates));
+        System.out.println(findBank(banks, exchangeRates));
     }
 
-    public static String countBadQualityItems(String[] banks, double[] exchangeRates) {
+    public static String findBank(String[] banks, double[] exchangeRates) {
         int maxRateIndex = 0;
         for (int i = 0; i < banks.length; i++) {
             if (exchangeRates[i] > exchangeRates[maxRateIndex]) {
