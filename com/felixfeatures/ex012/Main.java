@@ -8,10 +8,10 @@ public class Main {
 
     public static void main(String[] args) {
         int[] array = {2, 10, 15, -9, 0, 8, 11};
-        printIfHasDivider(array, 2, 1);
+        printIfHasRemainder(array, 2, 1);
     }
 
-    public static void printIfHasDivider(int[] array, int divider, int remainder) {
+    public static void printIfHasRemainder(int[] array, int divider, int remainder) {
         if (remainder < 0 || remainder >= divider) {
             System.out.println("Wrong pair of divider and remainder");
             return;
