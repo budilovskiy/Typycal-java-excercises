@@ -18,9 +18,7 @@ public class Main {
         }
         if (array != null) {
             for (int i = 0; i < array.length; i++) {
-                if (array[i] % divider == remainder) {
-                    System.out.print(array[i] + " ");
-                }
+                System.out.print(array[i] % divider == remainder ? array[i] + " " : "");
             }
         }
     }
