@@ -15,8 +15,10 @@ public class Main {
         if (limit > array.length) {
             limit = array.length;
         }
+
         int maxIndex = 0;
         int minIndex = 0;
+
         for (int i = 1; i < limit; i++) {
             maxIndex = array[i] > array[maxIndex] ? i : maxIndex;
         }
@@ -24,6 +26,7 @@ public class Main {
         for (int i = 0; i < limit - 1; i++) {
             minIndex = array[i] < array[minIndex] ? i : minIndex;
         }
+
         return array[maxIndex] + array[minIndex];
     }
 }
