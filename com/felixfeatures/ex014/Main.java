@@ -15,9 +15,7 @@ public class Main {
     public static long countMarks(int[] array) {
         long counter = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] == 2) {
-                counter++;
-            }
+            counter += (array[i] > 2) ? 0 : 1;
         }
         return counter;
     }
