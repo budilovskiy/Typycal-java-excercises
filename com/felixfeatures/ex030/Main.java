@@ -1,6 +1,7 @@
 package com.felixfeatures.ex030;
 
 import java.util.Arrays;
+import java.util.function.IntUnaryOperator;
 
 /**
  * 30. Дана последовательность целых чисел a1, a2, ..., аn.
@@ -12,6 +13,7 @@ public class Main {
         int[] array = {10, 11, 10000, 12, 20, 100, 10, 1000, 18};
         System.out.println(Arrays.toString(array));
         System.out.println(Arrays.toString(removeMins(array)));
+        System.out.println(Arrays.toString(funcRemoveMins(array)));
     }
 
     public static int[] removeMins(int[] array) {
@@ -44,6 +46,15 @@ public class Main {
         }
 
         return result;
+    }
+
+    public static int[] funcRemoveMins(int[] array) {
+        int min = Arrays.stream(array)
+                .min()
+                .getAsInt();
+        return Arrays.stream(array)
+                .filter(n -> n != min)
+                .toArray();
     }
 
 }
