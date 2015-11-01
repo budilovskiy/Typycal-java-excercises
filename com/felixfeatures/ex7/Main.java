@@ -1,6 +1,7 @@
 package com.felixfeatures.ex7;
 
 import java.util.Arrays;
+import java.util.function.IntUnaryOperator;
 
 /**
  * 7. Дана последовательность действительных чисел a1, a2, ..., an.
@@ -16,13 +17,22 @@ public class Main {
     }
 
     public static int[] funcElementsReplacements(int[] array, int element) {
-        System.out.println("Replacements: " + Arrays.stream(array)
-                .filter(n -> n > element)
-                .map(operand -> (operand > element) ? element : operand)
-                .count());
-        return Arrays.stream(array)
-                .map(operand -> (operand > element) ? element : operand)
+        final long[] counter = {0};
+
+        IntUnaryOperator operator = operand -> {
+            if (operand > element) {
+                counter[0]++;
+                return element;
+            } else {
+                return operand;
+            }
+        };
+
+        int[] result =  Arrays.stream(array)
+                .map(operator)
                 .toArray();
+        System.out.println("Replacements: " + counter[0]);
+        return result;
     }
 
     public static int[] elementReplacement(int[] array, int element) {
