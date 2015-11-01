@@ -11,7 +11,7 @@ import java.util.Arrays;
  */
 public class Main {
 
-    public static int[] createZeroIndexesArray(InputStreamReader in, int element) throws IOException {
+    public static int[] createIndexesArray(InputStreamReader in, int element) throws IOException {
         ByteArrayOutputStream buffer = new ByteArrayOutputStream();
         int counter = 0;
         int number;
@@ -36,7 +36,7 @@ public class Main {
         byte[] array = {1, 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 0, 0, 1, 0};
         InputStreamReader in = new InputStreamReader(new ByteArrayInputStream(array));
         try {
-            System.out.println(Arrays.toString(createZeroIndexesArray(in, 0)));
+            System.out.println(Arrays.toString(createIndexesArray(in, 0)));
         } catch (IOException e) {
             e.printStackTrace();
         }
