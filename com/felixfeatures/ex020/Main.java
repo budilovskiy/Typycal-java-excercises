@@ -12,16 +12,16 @@ public class Main {
 
     public static int minMaxSum(int[] array, int limit) {
         limit *= 2;
-        if (limit > array.length - 1) {
-            limit = array.length - 1;
+        if (limit > array.length) {
+            limit = array.length;
         }
         int maxIndex = 0;
         int minIndex = 0;
-        for (int i = 1; i <= limit; i++) {
+        for (int i = 1; i < limit; i++) {
             maxIndex = array[i] > array[maxIndex] ? i : maxIndex;
         }
 
-        for (int i = 0; i < limit; i++) {
+        for (int i = 0; i < limit - 1; i++) {
             minIndex = array[i] < array[minIndex] ? i : minIndex;
         }
         return array[maxIndex] + array[minIndex];
