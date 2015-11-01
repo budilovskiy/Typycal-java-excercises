@@ -11,15 +11,11 @@ public class Main {
         System.out.println(sequenceLength(array, 0));  // 6, including 0
     }
 
-    public static long sequenceLength(int[] array, int endElement) {
-        long counter = 0;
-        for (int i = 0; i < array.length; i++) {
-            counter++;
-            if (array[i] == endElement) {
-                break;
-            }
+    public static int sequenceLength(int[] array, int endElement) {
+        int counter = 0;
+        while (array[counter++] != endElement) {
+            continue;
         }
         return counter;
     }
-
 }
