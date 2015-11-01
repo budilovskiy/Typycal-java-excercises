@@ -15,7 +15,7 @@ public class Main {
         int positiveCounter = 0;
         int negativeCounter = 0;
         int zeroCounter = 0;
-        for (int i = 0; i < array.length; i++)
+        for (int i = 0; i < array.length; i++) {
             if (array[i] > 0) {
                 positiveCounter++;
             } else if (array[i] < 0) {
@@ -23,6 +23,7 @@ public class Main {
             } else {
                 zeroCounter++;
             }
+        }
         System.out.printf("Positive : %d\nNegative : %d\nZeroes : %d", positiveCounter, negativeCounter, zeroCounter);
     }
 }
