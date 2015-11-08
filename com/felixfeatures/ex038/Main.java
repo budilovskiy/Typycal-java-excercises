@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        int[] array = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] array = {2, 8, 8, 8, 8, 2, 2, 2, 2, 2, 8};
         System.out.println(Arrays.toString(array));
         sumOfPairs(array, 10);
 
@@ -17,9 +17,9 @@ public class Main {
 
     public static void sumOfPairs(int[] array, int sum) {
         for (int i = 0; i < array.length; i++) {
-            for (int j = i; j < array.length; j++) {
+            for (int j = i + 1; j < array.length; j++) {
                 if (array[i] + array[j] == sum) {
-                    System.out.println("a[" + i + "] = " + array[i] + ", a[" + j + "] = " + array[j]);
+                    System.out.printf("a[%d] = %d, a[%d] = %d\n", i, array[i], j, array[j]);
                 }
             }
         }
