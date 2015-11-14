@@ -12,11 +12,11 @@ public class Main {
         double num = 6.3;
         double[] array = {7.6, 3.6, 15.0, 5.9, 25.1, 5.2, 3.3, 21.8, 14.2, 2.6};
         System.out.println(Arrays.toString(array));
-        findElements(num, array);
+        findClosestAverage(num, array);
 
     }
 
-    public static void findElements(double number, double[] array) {
+    public static void findClosestAverage(double number, double[] array) {
         double average;
         double[] buffer = new double[2];
         double delta = number;
