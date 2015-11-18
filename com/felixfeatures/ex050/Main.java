@@ -20,21 +20,23 @@ public class Main {
         int counter = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] < 0) {
-                swap(array, i, counter++);
+                swap(array, counter++, i);
             }
         }
 
         for (int i = counter; i < array.length; i++) {
             if (array[i] == 0) {
-                swap(array, i, counter++);
+                swap(array, counter++, i);
             }
         }
         return array;
     }
 
     private static void swap(int array[], int index1, int index2) {
-        int temp = array[index1];
-        array[index1] = array[index2];
-        array[index2] = temp;
+        int temp = array[index2];
+        for (int i = index2; i > index1; i--) {
+        	array[i] = array[i - 1];
+        }
+        array[index1] = temp;
     }
 }
