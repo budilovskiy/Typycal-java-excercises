@@ -32,6 +32,7 @@ public class Main {
     }
 
     private static boolean[] createArrayOfPrimes() {
+        // the sieve of Eratosthenes
         boolean isPrime[] = new boolean[N];
         Arrays.fill(isPrime, true);
         isPrime[0] = isPrime[1] = false;
