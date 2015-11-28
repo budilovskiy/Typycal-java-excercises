@@ -12,17 +12,38 @@ public class Main {
     private static final int N = 1000;
 
     public static void main(String[] args) {
-        int numOfElements = 50;
+        int numOfElements = 10;
         int[] array = new int[numOfElements];
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(N);
         }
         System.out.println(Arrays.toString(array));
-        printPrimeNumbers(array);
+        printPrimeNumbers1(array);
+        System.out.println();
+        printPrimeNumbers2(array);
     }
 
-    public static void printPrimeNumbers(int[] array) {
+    public static void printPrimeNumbers1(int[] array) {
+        // iterating dividers
+        for (int i = 0; i < array.length; i++) {
+            if (findDividersNum(array[i]) == 0) {
+                System.out.println(i + ": " + array[i]);
+            }
+        }
+    }
+
+    private static int findDividersNum(int i) {
+        int counter = 0;
+        for (int j = 2; j < i; j++) {
+            if (i % j == 0) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    public static void printPrimeNumbers2(int[] array) {
         boolean[] isPrime = createArrayOfPrimes();
         for (int i = 0; i < array.length; i++) {
             if (isPrime[array[i]]) {
