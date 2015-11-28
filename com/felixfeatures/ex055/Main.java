@@ -9,14 +9,14 @@ import java.util.Random;
  */
 public class Main {
 
-    private static final int N = 1000;
+    private static final int MAX_NUMBER = 1000;
 
     public static void main(String[] args) {
         int numOfElements = 10;
         int[] array = new int[numOfElements];
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(N);
+            array[i] = random.nextInt(MAX_NUMBER);
         }
         System.out.println(Arrays.toString(array));
         printPrimeNumbers1(array);
@@ -54,7 +54,7 @@ public class Main {
 
     private static boolean[] createArrayOfPrimes() {
         // the sieve of Eratosthenes
-        boolean isPrime[] = new boolean[N];
+        boolean isPrime[] = new boolean[MAX_NUMBER];
         Arrays.fill(isPrime, true);
         isPrime[0] = isPrime[1] = false;
         for (int i = 2; i < isPrime.length; i++) {
