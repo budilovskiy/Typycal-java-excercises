@@ -17,10 +17,10 @@ public class Main {
             array[i] = random.nextInt(10);
         }
         System.out.println(Arrays.toString(array));
-        System.out.println(Arrays.toString(UniqueElementsCount(array)));
+        System.out.println(Arrays.toString(getUniqueElementsArray(array)));
     }
 
-    public static int[] UniqueElementsCount(int[] array) {
+    public static int[] getUniqueElementsArray(int[] array) {
         boolean[] isUnique = new boolean[array.length];
         int[] result = new int[getUniqueCounter(array, isUnique)];
         int i = 0;
