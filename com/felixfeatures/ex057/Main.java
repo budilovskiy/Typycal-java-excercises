@@ -10,7 +10,7 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-        int numOfElements = 10;
+        int numOfElements = 35;
         int[] array = new int[numOfElements];
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
@@ -22,32 +22,29 @@ public class Main {
 
     public static int[] UniqueElementsCount(int[] array) {
         boolean[] isUnique = new boolean[array.length];
-        Arrays.fill(isUnique, true);
-
-        for (int i = 0; i < array.length - 1; i++) {
-            for (int j = i + 1; j < array.length; j++) {
-                if (isUnique[i] && array[i] == array[j]) {
-                    isUnique[j] = false;
-                }
-            }
-        }
-
-        int counter = 0;
-        for (boolean unique : isUnique) {
-            if (unique) {
-                counter++;
-            }
-        }
-
-        int[] result = new int[counter];
+        int[] result = new int[getUniqueCounter(array, isUnique)];
         int i = 0;
-        for (int j = 0; j < isUnique.length; j++) {
+        for (int j = 0; j < array.length; j++) {
             if (isUnique[j]) {
                 result[i++] = array[j];
             }
         }
 
         return result;
+    }
+
+    private static int getUniqueCounter(int[] array, boolean[] isUnique) {
+        Arrays.fill(isUnique, true);
+        int counter = array.length;
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (isUnique[i] && array[i] == array[j]) {
+                    isUnique[j] = false;
+                    counter--;
+                }
+            }
+        }
+        return counter;
     }
 
 }
