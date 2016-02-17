@@ -23,22 +23,15 @@ public class Main {
         boolean[] isUnique = new boolean[array.length];
         Arrays.fill(isUnique, true);
 
+        int counter = array.length;
         for (int i = 0; i < array.length - 1; i++) {
             for (int j = i + 1; j < array.length; j++) {
                 if (isUnique[i] && array[i] == array[j]) {
                     isUnique[j] = false;
+                    counter--;
                 }
             }
         }
-        //System.out.println(Arrays.toString(isUnique));
-
-        int counter = 0;
-        for (boolean unique : isUnique) {
-            if (unique) {
-                counter++;
-            }
-        }
-
         return counter;
     }
 
