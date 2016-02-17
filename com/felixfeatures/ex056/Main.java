@@ -16,10 +16,10 @@ public class Main {
             array[i] = random.nextInt(10);
         }
         System.out.println(Arrays.toString(array));
-        System.out.println(UniqeElementsCount(array));
+        System.out.println(uniqeElementsCount(array));
     }
 
-    public static int UniqeElementsCount(int[] array) {
+    public static int uniqeElementsCount(int[] array) {
         boolean[] isUnique = new boolean[array.length];
         Arrays.fill(isUnique, true);
 
